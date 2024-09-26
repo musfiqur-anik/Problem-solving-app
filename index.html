@@ -1,23 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Title Here</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brute force solver</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <h1>Brute force solver</h1>
+      <h1>Brute force solver</h1>
     </header>
     <main>
-        <section>
-            <h2>solve your problems!</h2>
-        </section>
-        <button onclick="check()">Check</button>
+      <section>
+        <form class="exp__form" onsubmit="check(); return false;">
+          <div class="form__field">
+            <label for="exp__input" class="form__label">Expression:</label>
+            <input
+              id="exp__input"
+              type="text"
+              class="form__input"
+              pattern="\b.+\b"
+              required
+            />
+            <menu class="exp__menu">
+              <li><button class="exp__btn" type="button">+</button></li>
+              <li><button class="exp__btn" type="button">-</button></li>
+              <li><button class="exp__btn" type="button">/</button></li>
+              <li><button class="exp__btn" type="button">*</button></li>
+              <li><button class="exp__btn" type="button">mod</button></li>
+              <li><button class="exp__btn" type="button">^</button></li>
+              <li><button class="exp__btn" type="button">( )</button></li>
+              <li><button class="exp__btn" type="button">=</button></li>
+              <li><button class="exp__btn" type="button">x</button></li>
+              <li><button class="exp__btn" type="button">y</button></li>
+            </menu>
+          </div>
 
+          <div class="form__field">
+            <label for="exp__limit" class="form__label">Limit:</label>
+            <input
+              id="exp__limit"
+              type="number"
+              class="form__input"
+              min="1"
+              placeholder="1000"
+              required
+            />
+          </div>
+          <button class="exp__form__submit-btn">Check</button>
+        </form>
+      </section>
+      <section>
+        <output></output>
+      </section>
     </main>
- 
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
