@@ -12,27 +12,31 @@
     </header>
     <main>
       <section>
-        <form class="exp__form" onsubmit="check(); return false;">
+        <form class="exp__form">
           <div class="form__field">
             <label for="exp__input" class="form__label">Expression:</label>
             <input
               id="exp__input"
               type="text"
               class="form__input"
-              pattern="\b.+\b"
+              readonly
               required
             />
+            <input id="L.H.S" type="text" class="form__input" required />
             <menu class="exp__menu">
-              <li><button class="exp__btn" type="button">+</button></li>
-              <li><button class="exp__btn" type="button">-</button></li>
-              <li><button class="exp__btn" type="button">/</button></li>
-              <li><button class="exp__btn" type="button">*</button></li>
-              <li><button class="exp__btn" type="button">mod</button></li>
-              <li><button class="exp__btn" type="button">^</button></li>
-              <li><button class="exp__btn" type="button">( )</button></li>
-              <li><button class="exp__btn" type="button">=</button></li>
-              <li><button class="exp__btn" type="button">x</button></li>
-              <li><button class="exp__btn" type="button">y</button></li>
+              <div id="1 to 10"></div>
+              <li><button class="exp__btn" onclick="plus()" type="button">+</button></li>
+              <li><button class="exp__btn" type="button" onclick="minus()">-</button></li>
+              <li><button class="exp__btn" type="button" onclick="divide()">/</button></li>
+              <li><button class="exp__btn" type="button" onclick="multiply()">*</button></li>
+              <li><button class="exp__btn" type="button" onclick="mod()">mod</button></li>
+              <li><button class="exp__btn" type="button" onclick="exponent()">^</button></li>
+              <li><button class="exp__btn" type="button" onclick="brackets_l()">(</button></li>
+              <li><button class="exp__btn" type="button" onclick="brackets_r()">)</button></li>
+              <li><button class="exp__btn" type="button" onclick="equals()">=</button></li>
+              <li><button class="exp__btn" type="button" onclick="variable_x()">x</button></li>
+              <li><button class="exp__btn" type="button" onclick="variable_y()">y</button></li>
+
             </menu>
           </div>
 
@@ -44,10 +48,11 @@
               class="form__input"
               min="1"
               placeholder="1000"
-              required
             />
           </div>
           <button class="exp__form__submit-btn">Check</button>
+     
+ 
         </form>
       </section>
       <section>
