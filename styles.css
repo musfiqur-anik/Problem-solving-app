@@ -123,3 +123,15 @@ h1 {
   height: 4ex;
   font-size: 1.5rem;
 }
+
+#output {
+  display: block;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: color-mix(in srgb, slateblue, black 10%);
+  border: 2px solid lavender;
+  border-radius: 8px;
+  white-space: pre-wrap; /* Ensures whitespace is respected for formatted JSON */
+  color: white;
+  font-family: monospace;
+}

@@ -12,7 +12,7 @@
     </header>
     <main>
       <section>
-        <form class="exp__form">
+        <form class="exp__form" onsubmit="check(event)">
           <div class="form__field">
             <label for="exp__input" class="form__label">Expression:</label>
             <input
@@ -56,10 +56,10 @@
         </form>
       </section>
       <section>
-        <output></output>
+        <div id="output"></div>
       </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="test.js"></script>
   </body>
 </html>
