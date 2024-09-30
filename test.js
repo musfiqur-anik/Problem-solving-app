@@ -13,7 +13,13 @@ for (let i = 1; i <= 200; i++) {
     array.push(i); // Add numbers from 1 to 100
 }
 
-
+function reset() {
+    document.getElementById("exp__input").value ="";
+}
+function back() {
+    expressionArray.pop();
+        document.getElementById("exp__input").value = expressionArray.join('');
+}
 
     function check(event) {
         event.preventDefault();
@@ -74,9 +80,10 @@ for (let i = 1; i <= 200; i++) {
             outputElement.innerText = `No solutions found for f(x, y) = ${LHS}`;
         } else {
             // Format the output
-            let formattedResults = `Solutions found for f(x, y) = ${LHS}:\n\n`;
+            let formattedResults = `Solutions found for f(x, y) = ${LHS}\nnumber of solutions: ${nonEmptyResults.length};
+            \n`;
     
-            nonEmptyResults.forEach(([key, value]) => {
+             nonEmptyResults.forEach(([key, value]) => {
                 value.forEach(pair => {
                     if (pair.x !== undefined && pair.y !== undefined) {
                         formattedResults += `x = ${pair.x}, y = ${pair.y}\n`;
@@ -85,7 +92,7 @@ for (let i = 1; i <= 200; i++) {
                     }
                 });
             });
-    
+
             outputElement.innerText = formattedResults;
         }
     
@@ -112,12 +119,14 @@ function brackets_l() { updateInput('('); }
 function brackets_r() { updateInput(')'); }
 function variable_x() { updateInput('x'); }
 function variable_y() { updateInput('y'); }
-const number = array.slice(0,10);
-const numberHtml = document.getElementById("1 to 10");
-const menu = document.querySelector("menu");
+let functions = {};
 
-number.forEach(
-    (n)=> {numberHtml.innerHTML +=`<button class="exp__btn" onclick="updateInput(${n})">${n}</button></br>`}
-)
+for (let i =0; i <10; i++) {
+    functions[`number_${i}`] = function() {
+        updateInput(`${i}`);
+    };
+}
 
-menu.appendChild(numberHtml);
+
+
+

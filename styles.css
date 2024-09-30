@@ -1,3 +1,4 @@
+
 :root {
   color-scheme: dark;
 }
@@ -12,18 +13,8 @@
 }
 
 body {
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: rgb(28, 27, 34);
   margin: 2rem auto;
 
@@ -71,6 +62,9 @@ button {
 h1 {
   color: darkorange;
   margin: revert;
+  /* my style: */
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .exp__form {
@@ -107,7 +101,7 @@ h1 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 10px;
 }
 
 .exp__btn {
@@ -122,6 +116,7 @@ h1 {
   width: calc(5ch + 1.5rem);
   height: 4ex;
   font-size: 1.5rem;
+  width: 100%;
 }
 
 #output {
@@ -134,4 +129,12 @@ h1 {
   white-space: pre-wrap; /* Ensures whitespace is respected for formatted JSON */
   color: white;
   font-family: monospace;
+}
+.exp__form__reset-btn {
+  background-color: red;
+  width: calc(5ch + 1.5rem);
+  height: 4ex;
+  font-size: 1.5rem;
+  width: 100%;
+  margin-top: 10px;
 }
