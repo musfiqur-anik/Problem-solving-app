@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-      <h1>Brute force solver</h1>
+      <h1>Brute force solver (Integer)</h1>
     </header>
     <main>
       <section>
@@ -24,7 +24,7 @@
               readonly
               required
             />
-            <label for="L.H.S" class="form__label">Expression Value:</label>
+            <label for="L.H.S" class="form__label">=</label>
             <input id="L.H.S" type="text" class="form__input" required />
             <menu class="exp__menu">
               <li>
@@ -68,9 +68,9 @@
                 </button>
               </li>
               <li>
-                <button class="exp__btn" type="button" onclick="equals()">
+                <!--button class="exp__btn" type="button" onclick="equals()">
                   =
-                </button>
+                </button> -->
               </li>
               <li>
                 <button class="exp__btn" type="button" onclick="variable_x()">
@@ -136,22 +136,17 @@
                 </button>
               </li>
             </menu>
-          <div class="form__field">
-            <label for="exp__limit" class="form__label">Limit:</label>
-            <input
-              id="exp__limit"
-              type="number"
-              class="form__input"
-              min="1"
-              placeholder="1000"
-            />
-          </div>
+          <div class="button-container">
           <button class="exp__form__submit-btn">Check</button>
           <button class="exp__form__reset-btn" onclick="reset()">Reset </button>
+          </div>
         </form>
       </section>
       <section>
-        <div id="output"></div>
+        
+        <div id="output">
+          <h1 class="show_result">Results:</h1>
+        </div>
       </section>
     </main>
     <script src="test.js"></script>

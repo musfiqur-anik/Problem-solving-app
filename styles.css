@@ -70,7 +70,7 @@ h1 {
 .exp__form {
   border: 4px solid color-mix(in srgb, slateblue, black 50%);
   border-radius: 8px;
-  padding: 1rem;
+  padding: 6px 17px 2px 17px;
 }
 
 .form__field {
@@ -78,9 +78,17 @@ h1 {
 }
 
 .form__label {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
+.show_result {
+   width: 30%;
+   margin:auto 35%;
+   font-size: 1.5rem;
+   font-weight: 700;
+   color: aquamarine;
+
+}
 .form__input {
   appearance: none;
   width: 100%;
@@ -113,15 +121,15 @@ h1 {
 
 .exp__form__submit-btn {
   --bgc: green;
-  width: calc(5ch + 1.5rem);
+  width: calc(15ch + 1.5rem);
   height: 4ex;
   font-size: 1.5rem;
-  width: 100%;
+  margin-top: 20px;
 }
 
 #output {
   display: block;
-  margin-top: 1rem;
+  margin-top: 1rem; 
   padding: 1rem;
   background-color: color-mix(in srgb, slateblue, black 10%);
   border: 2px solid lavender;
@@ -132,9 +140,18 @@ h1 {
 }
 .exp__form__reset-btn {
   background-color: red;
-  width: calc(5ch + 1.5rem);
+  width: calc(12ch + 1.5rem);
   height: 4ex;
   font-size: 1.5rem;
-  width: 100%;
   margin-top: 10px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.show_result {
+  size: 30;
 }
