@@ -12,8 +12,8 @@ function updateInput(value) {
 
 
 
-for (let i = 1; i <= 200; i++) {
-    array.push(i); // Add numbers from 1 to 100
+for (let i = 1; i <= 300; i++) {
+    array.push(i); // Add numbers from 1 to 300
 }
 
 function reset() {

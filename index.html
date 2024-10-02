@@ -7,11 +7,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brute force solver</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+      /* Style for the Guide Button */
+.guide-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #35424a;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Style for the Popup Modal */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+}
+
+/* Popup Content */
+.popup-content {
+  background-color: #f4f4f4;
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70%;
+  border-radius: 15px;
+  max-height: 70%;
+  overflow-y: auto; /* Add vertical scrollbar if content exceeds window height */
+}
+
+p, li {
+  color: grey;
+  font-weight: 300;
+  font-family: 'Roboto';
+}
+
+h2, h3 {
+  color: black;
+  font-weight: 500;
+  font-family: 'Roboto';
+  font-size: larger;
+}
+
+/* Close Button */
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  cursor: pointer;
+}
+
+    </style>
   </head>
   <body>
     <header>
       <h1>Brute force solver (Integer)</h1>
     </header>
+ 
+    <button id="guide-button" class="guide-btn">?</button>
+
+  <div id="guide-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn">&times;</span>
+    <header>
+      <h1>User Guide for the Brute Force Solver</h1>
+    </header>
+
+    <section>
+      <h2>Overview</h2>
+      <p>Welcome to the Brute Force Solver! This guide will help you understand how to use our website to find integer pairs that satisfy mathematical equations.</p>
+    </section>
+
+    <section>
+      <h3>Step 1: Navigate to the Solver Section</h3>
+      <p>On the homepage, locate the input section labeled "Expression". This is where you will input your parameters.</p>
+
+      <h3>Step 2: Input the Equation</h3>
+      <p>Enter the target value (e.g., 80) in the designated field.</p>
+
+      <h3>Step 3: Set Parameters</h3>
+      <ul>
+        <li>Select x or y as variables, or both.</li>
+        <li>Use the modular arithmetic function, if needed.</li>
+      </ul>
+
+      <h3>Step 4: Run the Solver</h3>
+      <p>Click the button labeled "Check" to run the solver.</p>
+
+      <h3>Step 5: View Results</h3>
+      <p>The solutions will display on the page once processed.</p>
+      </section>
+    </div>
+  </div>
+
     <main>
       <section>
         <form class="exp__form" onsubmit="check(event)">
@@ -150,5 +257,30 @@
       </section>
     </main>
     <script src="test.js"></script>
+    <script>
+      // Get the popup element and the guide button
+      var popup = document.getElementById("guide-popup");
+      var btn = document.getElementById("guide-button");
+      var closeBtn = document.getElementsByClassName("close-btn")[0];
+    
+      // When the user clicks the guide button, open the popup
+      btn.onclick = function() {
+        popup.style.display = "block";
+      }
+    
+      // When the user clicks on the close button (×), close the popup
+      closeBtn.onclick = function() {
+        popup.style.display = "none";
+      }
+    
+      // When the user clicks anywhere outside the popup, close it
+      window.onclick = function(event) {
+        if (event.target == popup) {
+          popup.style.display = "none";
+        }
+      }
+    </script>
+    
+    
   </body>
 </html>
