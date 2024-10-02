@@ -151,11 +151,13 @@ function back() {
         
                 nonEmptyResults.forEach(([key, value]) => {
                     value.forEach(pair => {
-                        if (pair.x !== undefined) {
-                            formattedResults += `x = ${pair.x}\n`;
+                        if (pair.x !== undefined && pair.y == undefined) {
+                            formattedResults += `\n x = ${pair.x}`;
                         }
-                        if (pair.y !== undefined) {
-                            formattedResults += `y = ${pair.y}\n`;
+                        if (pair.y !== undefined && pair.x == undefined) {
+                            formattedResults += `\n y = ${pair.y}`;
+                        } else if (pair.x !== undefined && pair.y !== undefined) {
+                            formattedResults += `\n x = ${pair.x}, y = ${pair.y} `;
                         }
                     });
                 });
